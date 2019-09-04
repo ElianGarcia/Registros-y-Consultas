@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@
             this.btBuscar = new System.Windows.Forms.Button();
             this.tbMatricula = new System.Windows.Forms.TextBox();
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.tbSexo = new System.Windows.Forms.TextBox();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.tbCelular = new System.Windows.Forms.TextBox();
@@ -57,10 +57,13 @@
             this.btEliminar = new System.Windows.Forms.Button();
             this.btGuardar = new System.Windows.Forms.Button();
             this.btNuevo = new System.Windows.Forms.Button();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbSexo = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -182,13 +185,13 @@
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.cbSexo);
             this.panel.Controls.Add(this.FechaNacimientoTimePicker);
             this.panel.Controls.Add(this.tbApellidos);
             this.panel.Controls.Add(this.tbBalance);
             this.panel.Controls.Add(this.btBuscar);
             this.panel.Controls.Add(this.tbMatricula);
             this.panel.Controls.Add(this.IDnumericUpDown);
-            this.panel.Controls.Add(this.tbSexo);
             this.panel.Controls.Add(this.tbEmail);
             this.panel.Controls.Add(this.tbNombre);
             this.panel.Controls.Add(this.tbCelular);
@@ -246,13 +249,6 @@
             this.IDnumericUpDown.Name = "IDnumericUpDown";
             this.IDnumericUpDown.Size = new System.Drawing.Size(84, 20);
             this.IDnumericUpDown.TabIndex = 0;
-            // 
-            // tbSexo
-            // 
-            this.tbSexo.Location = new System.Drawing.Point(2, 233);
-            this.tbSexo.Name = "tbSexo";
-            this.tbSexo.Size = new System.Drawing.Size(199, 20);
-            this.tbSexo.TabIndex = 9;
             // 
             // tbEmail
             // 
@@ -338,6 +334,21 @@
             this.btNuevo.UseVisualStyleBackColor = true;
             this.btNuevo.Click += new System.EventHandler(this.BtNuevo_Click);
             // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
+            // 
+            // cbSexo
+            // 
+            this.cbSexo.FormattingEnabled = true;
+            this.cbSexo.Items.AddRange(new object[] {
+            "M",
+            "F"});
+            this.cbSexo.Location = new System.Drawing.Point(2, 233);
+            this.cbSexo.Name = "cbSexo";
+            this.cbSexo.Size = new System.Drawing.Size(199, 21);
+            this.cbSexo.TabIndex = 13;
+            // 
             // RegistroEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,6 +365,7 @@
             this.panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -376,7 +388,6 @@
         private System.Windows.Forms.NumericUpDown IDnumericUpDown;
         private System.Windows.Forms.Button btBuscar;
         private System.Windows.Forms.TextBox tbBalance;
-        private System.Windows.Forms.TextBox tbSexo;
         private System.Windows.Forms.TextBox tbCedula;
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.TextBox tbCelular;
@@ -389,5 +400,7 @@
         private System.Windows.Forms.Button btGuardar;
         private System.Windows.Forms.Button btNuevo;
         private System.Windows.Forms.DateTimePicker FechaNacimientoTimePicker;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.ComboBox cbSexo;
     }
 }
