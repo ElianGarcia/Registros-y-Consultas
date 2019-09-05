@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Register.UI.Consultas;
+using Register.UI.Registros;
+using System;
 using System.Windows.Forms;
 
 namespace Register
@@ -15,6 +10,21 @@ namespace Register
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void RegistroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroEstudiantes registro = new RegistroEstudiantes();
+            this.Hide();
+            registro.Show();
+            
+        }
+
+        private void ConsultaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaEstudiantes consulta = new ConsultaEstudiantes();
+            this.Hide();
+            consulta.Show();
         }
     }
 }

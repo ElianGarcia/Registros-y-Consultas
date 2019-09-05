@@ -42,23 +42,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel = new System.Windows.Forms.Panel();
+            this.tbCedula = new System.Windows.Forms.MaskedTextBox();
+            this.tbTelefono = new System.Windows.Forms.MaskedTextBox();
+            this.tbCelular = new System.Windows.Forms.MaskedTextBox();
+            this.cbSexo = new System.Windows.Forms.ComboBox();
             this.FechaNacimientoTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.tbApellidos = new System.Windows.Forms.TextBox();
             this.tbBalance = new System.Windows.Forms.TextBox();
             this.btBuscar = new System.Windows.Forms.Button();
-            this.tbMatricula = new System.Windows.Forms.TextBox();
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbNombre = new System.Windows.Forms.TextBox();
-            this.tbCelular = new System.Windows.Forms.TextBox();
-            this.tbCedula = new System.Windows.Forms.TextBox();
-            this.tbTelefono = new System.Windows.Forms.TextBox();
+            this.tbApellidos = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btEliminar = new System.Windows.Forms.Button();
             this.btGuardar = new System.Windows.Forms.Button();
             this.btNuevo = new System.Windows.Forms.Button();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cbSexo = new System.Windows.Forms.ComboBox();
+            this.tbMatricula = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
@@ -81,7 +81,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(3, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(117, 287);
+            this.panel1.Size = new System.Drawing.Size(117, 283);
             this.panel1.TabIndex = 0;
             // 
             // label11
@@ -185,22 +185,58 @@
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.tbMatricula);
+            this.panel.Controls.Add(this.tbCedula);
+            this.panel.Controls.Add(this.tbTelefono);
+            this.panel.Controls.Add(this.tbCelular);
             this.panel.Controls.Add(this.cbSexo);
             this.panel.Controls.Add(this.FechaNacimientoTimePicker);
-            this.panel.Controls.Add(this.tbApellidos);
             this.panel.Controls.Add(this.tbBalance);
             this.panel.Controls.Add(this.btBuscar);
-            this.panel.Controls.Add(this.tbMatricula);
             this.panel.Controls.Add(this.IDnumericUpDown);
             this.panel.Controls.Add(this.tbEmail);
             this.panel.Controls.Add(this.tbNombre);
-            this.panel.Controls.Add(this.tbCelular);
-            this.panel.Controls.Add(this.tbCedula);
-            this.panel.Controls.Add(this.tbTelefono);
+            this.panel.Controls.Add(this.tbApellidos);
             this.panel.Location = new System.Drawing.Point(126, 12);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(201, 287);
             this.panel.TabIndex = 1;
+            // 
+            // tbCedula
+            // 
+            this.tbCedula.Location = new System.Drawing.Point(3, 209);
+            this.tbCedula.Mask = "000-0000000-0";
+            this.tbCedula.Name = "tbCedula";
+            this.tbCedula.Size = new System.Drawing.Size(198, 20);
+            this.tbCedula.TabIndex = 17;
+            // 
+            // tbTelefono
+            // 
+            this.tbTelefono.Location = new System.Drawing.Point(3, 113);
+            this.tbTelefono.Mask = "(999)000-0000";
+            this.tbTelefono.Name = "tbTelefono";
+            this.tbTelefono.Size = new System.Drawing.Size(198, 20);
+            this.tbTelefono.TabIndex = 16;
+            // 
+            // tbCelular
+            // 
+            this.MyErrorProvider.SetError(this.tbCelular, "EL CAMPO CELULAR NO PUEDE ESTAR VACIO");
+            this.tbCelular.Location = new System.Drawing.Point(3, 137);
+            this.tbCelular.Mask = "000-000-0000";
+            this.tbCelular.Name = "tbCelular";
+            this.tbCelular.Size = new System.Drawing.Size(198, 20);
+            this.tbCelular.TabIndex = 15;
+            // 
+            // cbSexo
+            // 
+            this.cbSexo.FormattingEnabled = true;
+            this.cbSexo.Items.AddRange(new object[] {
+            "M",
+            "F"});
+            this.cbSexo.Location = new System.Drawing.Point(2, 233);
+            this.cbSexo.Name = "cbSexo";
+            this.cbSexo.Size = new System.Drawing.Size(199, 21);
+            this.cbSexo.TabIndex = 13;
             // 
             // FechaNacimientoTimePicker
             // 
@@ -209,46 +245,32 @@
             this.FechaNacimientoTimePicker.Size = new System.Drawing.Size(199, 20);
             this.FechaNacimientoTimePicker.TabIndex = 12;
             // 
-            // tbApellidos
-            // 
-            this.tbApellidos.Location = new System.Drawing.Point(2, 113);
-            this.tbApellidos.Name = "tbApellidos";
-            this.tbApellidos.Size = new System.Drawing.Size(199, 20);
-            this.tbApellidos.TabIndex = 4;
-            // 
             // tbBalance
             // 
-            this.tbBalance.Location = new System.Drawing.Point(3, 257);
+            this.tbBalance.Location = new System.Drawing.Point(2, 257);
             this.tbBalance.Name = "tbBalance";
-            this.tbBalance.Size = new System.Drawing.Size(198, 20);
+            this.tbBalance.Size = new System.Drawing.Size(199, 20);
             this.tbBalance.TabIndex = 10;
             // 
             // btBuscar
             // 
-            this.btBuscar.Image = global::Register.Properties.Resources.xmag;
+            this.btBuscar.Image = global::Register.Properties.Resources.find;
             this.btBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btBuscar.Location = new System.Drawing.Point(102, 0);
+            this.btBuscar.Location = new System.Drawing.Point(110, 0);
             this.btBuscar.Name = "btBuscar";
-            this.btBuscar.Size = new System.Drawing.Size(99, 36);
+            this.btBuscar.Size = new System.Drawing.Size(91, 36);
             this.btBuscar.TabIndex = 11;
             this.btBuscar.Text = "Buscar";
             this.btBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btBuscar.UseVisualStyleBackColor = true;
             this.btBuscar.Click += new System.EventHandler(this.BtBuscar_Click);
             // 
-            // tbMatricula
-            // 
-            this.tbMatricula.Location = new System.Drawing.Point(3, 41);
-            this.tbMatricula.Name = "tbMatricula";
-            this.tbMatricula.Size = new System.Drawing.Size(198, 20);
-            this.tbMatricula.TabIndex = 1;
-            // 
             // IDnumericUpDown
             // 
-            this.IDnumericUpDown.Location = new System.Drawing.Point(3, 7);
+            this.IDnumericUpDown.Location = new System.Drawing.Point(0, 0);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
-            this.IDnumericUpDown.Size = new System.Drawing.Size(84, 20);
-            this.IDnumericUpDown.TabIndex = 0;
+            this.IDnumericUpDown.Size = new System.Drawing.Size(96, 20);
+            this.IDnumericUpDown.TabIndex = 14;
             // 
             // tbEmail
             // 
@@ -264,26 +286,12 @@
             this.tbNombre.Size = new System.Drawing.Size(198, 20);
             this.tbNombre.TabIndex = 2;
             // 
-            // tbCelular
+            // tbApellidos
             // 
-            this.tbCelular.Location = new System.Drawing.Point(2, 137);
-            this.tbCelular.Name = "tbCelular";
-            this.tbCelular.Size = new System.Drawing.Size(199, 20);
-            this.tbCelular.TabIndex = 5;
-            // 
-            // tbCedula
-            // 
-            this.tbCedula.Location = new System.Drawing.Point(2, 209);
-            this.tbCedula.Name = "tbCedula";
-            this.tbCedula.Size = new System.Drawing.Size(199, 20);
-            this.tbCedula.TabIndex = 8;
-            // 
-            // tbTelefono
-            // 
-            this.tbTelefono.Location = new System.Drawing.Point(3, 89);
-            this.tbTelefono.Name = "tbTelefono";
-            this.tbTelefono.Size = new System.Drawing.Size(198, 20);
-            this.tbTelefono.TabIndex = 3;
+            this.tbApellidos.Location = new System.Drawing.Point(3, 89);
+            this.tbApellidos.Name = "tbApellidos";
+            this.tbApellidos.Size = new System.Drawing.Size(198, 20);
+            this.tbApellidos.TabIndex = 3;
             // 
             // panel2
             // 
@@ -299,7 +307,7 @@
             // 
             this.btEliminar.Image = global::Register.Properties.Resources.error;
             this.btEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btEliminar.Location = new System.Drawing.Point(233, 3);
+            this.btEliminar.Location = new System.Drawing.Point(240, 3);
             this.btEliminar.Name = "btEliminar";
             this.btEliminar.Size = new System.Drawing.Size(84, 53);
             this.btEliminar.TabIndex = 2;
@@ -310,9 +318,9 @@
             // 
             // btGuardar
             // 
-            this.btGuardar.Image = global::Register.Properties.Resources._3floppy3_unmount;
+            this.btGuardar.Image = global::Register.Properties.Resources.save__2_;
             this.btGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btGuardar.Location = new System.Drawing.Point(123, 3);
+            this.btGuardar.Location = new System.Drawing.Point(126, 3);
             this.btGuardar.Name = "btGuardar";
             this.btGuardar.Size = new System.Drawing.Size(78, 53);
             this.btGuardar.TabIndex = 1;
@@ -338,16 +346,13 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
-            // cbSexo
+            // tbMatricula
             // 
-            this.cbSexo.FormattingEnabled = true;
-            this.cbSexo.Items.AddRange(new object[] {
-            "M",
-            "F"});
-            this.cbSexo.Location = new System.Drawing.Point(2, 233);
-            this.cbSexo.Name = "cbSexo";
-            this.cbSexo.Size = new System.Drawing.Size(199, 21);
-            this.cbSexo.TabIndex = 13;
+            this.tbMatricula.Location = new System.Drawing.Point(2, 41);
+            this.tbMatricula.Mask = "0000-0000";
+            this.tbMatricula.Name = "tbMatricula";
+            this.tbMatricula.Size = new System.Drawing.Size(199, 20);
+            this.tbMatricula.TabIndex = 18;
             // 
             // RegistroEstudiantes
             // 
@@ -388,13 +393,9 @@
         private System.Windows.Forms.NumericUpDown IDnumericUpDown;
         private System.Windows.Forms.Button btBuscar;
         private System.Windows.Forms.TextBox tbBalance;
-        private System.Windows.Forms.TextBox tbCedula;
         private System.Windows.Forms.TextBox tbEmail;
-        private System.Windows.Forms.TextBox tbCelular;
         private System.Windows.Forms.TextBox tbApellidos;
-        private System.Windows.Forms.TextBox tbTelefono;
         private System.Windows.Forms.TextBox tbNombre;
-        private System.Windows.Forms.TextBox tbMatricula;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btEliminar;
         private System.Windows.Forms.Button btGuardar;
@@ -402,5 +403,9 @@
         private System.Windows.Forms.DateTimePicker FechaNacimientoTimePicker;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.ComboBox cbSexo;
+        private System.Windows.Forms.MaskedTextBox tbTelefono;
+        private System.Windows.Forms.MaskedTextBox tbCelular;
+        private System.Windows.Forms.MaskedTextBox tbCedula;
+        private System.Windows.Forms.MaskedTextBox tbMatricula;
     }
 }

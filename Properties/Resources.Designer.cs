@@ -63,16 +63,6 @@ namespace Register.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _3floppy3_unmount {
-            get {
-                object obj = ResourceManager.GetObject("3floppy3_unmount", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap add {
             get {
                 object obj = ResourceManager.GetObject("add", resourceCulture);
@@ -93,9 +83,19 @@ namespace Register.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap xmag {
+        internal static System.Drawing.Bitmap find {
             get {
-                object obj = ResourceManager.GetObject("xmag", resourceCulture);
+                object obj = ResourceManager.GetObject("find", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save__2_ {
+            get {
+                object obj = ResourceManager.GetObject("save (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

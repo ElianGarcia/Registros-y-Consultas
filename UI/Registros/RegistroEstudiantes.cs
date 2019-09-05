@@ -27,8 +27,8 @@ namespace Register.UI.Registros
             tbApellidos.Text = string.Empty;
             tbNombre.Text = string.Empty;
             tbCedula.Text = string.Empty;
-            tbSexo.Text = string.Empty;
-            tbTelefono.Text = string.Empty;
+            cbSexo.Text = string.Empty;
+            tbApellidos.Text = string.Empty;
             tbCelular.Text = string.Empty;
             tbEmail.Text = string.Empty;
             FechaNacimientoTimePicker.Value = DateTime.Now;
@@ -44,7 +44,7 @@ namespace Register.UI.Registros
             estudiante.Nombre = tbNombre.Text;
             estudiante.Apellidos = tbApellidos.Text;
             estudiante.Cedula = tbCedula.Text;
-            estudiante.Telefono = tbTelefono.Text;
+            estudiante.Telefono = tbApellidos.Text;
             estudiante.Celular = tbCelular.Text;
             estudiante.Email = tbEmail.Text;
             estudiante.FechaNacimiento = FechaNacimientoTimePicker.Value;
@@ -60,7 +60,7 @@ namespace Register.UI.Registros
             tbNombre.Text = estudiante.Nombre;
             tbApellidos.Text = estudiante.Apellidos;
             tbCedula.Text = estudiante.Cedula;
-            tbTelefono.Text = estudiante.Telefono;
+            tbApellidos.Text = estudiante.Telefono;
             tbCelular.Text = estudiante.Celular;
             tbEmail.Text = estudiante.Email;
             FechaNacimientoTimePicker.Value  = estudiante.FechaNacimiento;
@@ -95,10 +95,70 @@ namespace Register.UI.Registros
                 realizado = false;
             }
 
-            //
-            //TODO: Completar validaciones...
-            //
+            if (string.IsNullOrWhiteSpace(IDnumericUpDown.Text))
+            {
+                MyErrorProvider.SetError(IDnumericUpDown, "EL CAMPO ID NO PUEDE ESTAR VACIO");
+                IDnumericUpDown.Focus();
+                realizado = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(tbCedula.Text))
+            {
+                MyErrorProvider.SetError(tbCedula, "EL CAMPO CEDULA NO PUEDE ESTAR VACIO");
+                tbCedula.Focus();
+                realizado = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(tbApellidos.Text))
+            {
+                MyErrorProvider.SetError(tbApellidos, "EL CAMPO TELEFONO NO PUEDE ESTAR VACIO");
+                tbApellidos.Focus();
+                realizado = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(tbCelular.Text))
+            {
+                MyErrorProvider.SetError(tbCelular, "EL CAMPO CELULAR NO PUEDE ESTAR VACIO");
+                tbCelular.Focus();
+                realizado = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(tbEmail.Text))
+            {
+                MyErrorProvider.SetError(tbEmail, "EL CAMPO EMAIL NO PUEDE ESTAR VACIO");
+                tbEmail.Focus();
+                realizado = false;
+            }
+
+            if (FechaNacimientoTimePicker.Value == DateTime.Now)
+            {
+                MyErrorProvider.SetError(FechaNacimientoTimePicker, "EL CAMPO FECHA DE NACIMIENTO NO PUEDE SER IGUAL A LA FECHA ACTUAL");
+                FechaNacimientoTimePicker.Focus();
+                realizado = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(cbSexo.Text))
+            {
+                MyErrorProvider.SetError(cbSexo, "EL CAMPO SEXO NO PUEDE ESTAR VACIO, POR FAVOR SELECCIONE UNA OPCION");
+                cbSexo.Focus();
+                realizado = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(tbBalance.Text))
+            {
+                MyErrorProvider.SetError(tbBalance, "EL CAMPO BALANCE NO PUEDE ESTAR VACIO, POR FAVOR SELECCIONE UNA OPCION");
+                tbBalance.Focus();
+                realizado = false;
+            }
+
             return realizado;
+        }
+
+        private bool Existe()
+        {
+            Estudiante estudiante = EstudiantesBLL.Buscar((int)IDnumericUpDown.Value);
+
+            return (estudiante != null);
         }
 
         private void BtNuevo_Click(object sender, EventArgs e)
@@ -108,7 +168,34 @@ namespace Register.UI.Registros
 
         private void BtGuardar_Click(object sender, EventArgs e)
         {
+            Estudiante estudiante;
+            bool realizado = false;
 
+            if (!Validar())
+                return;
+
+            estudiante = LlenaCLase();
+
+            if (IDnumericUpDown.Value == 0)
+                realizado = EstudiantesBLL.Guardar(estudiante);
+            else
+            {
+                if (!Existe())
+                {
+                    MessageBox.Show("NO SE PUEDE MODIFICAR UN ESTUDIANTE INEXISTENTE", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                realizado = EstudiantesBLL.Modificar(estudiante);
+            }
+
+            if (realizado)
+            {
+                Limpiar();
+                MessageBox.Show("GUARDADO EXITOSAMENTE", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } else
+            {
+                MessageBox.Show("NO SE PUDO GUARDAR", "NO GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void BtEliminar_Click(object sender, EventArgs e)

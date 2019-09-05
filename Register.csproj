@@ -64,6 +64,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\ConsultaEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\ConsultaEstudiantes.Designer.cs">
+      <DependentUpon>ConsultaEstudiantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\RegistroEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,14 +86,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="UI\Consultas\ConsultaEstudiantes.resx">
+      <DependentUpon>ConsultaEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RegistroEstudiantes.resx">
       <DependentUpon>RegistroEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,20 +110,26 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="UI\Consultas\" />
+    <Folder Include="DAL\Scripts\" />
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\xmag.ico" />
+    <None Include="Resources\find.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\3floppy3_unmount.ico" />
+    <None Include="Resources\save.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\error.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save %282%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
