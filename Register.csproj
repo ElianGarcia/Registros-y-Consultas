@@ -110,7 +110,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DAL\Scripts\" />
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +129,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\save %282%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAL\Scripts\Scripts.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

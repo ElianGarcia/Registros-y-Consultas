@@ -88,7 +88,7 @@ namespace Register.UI.Registros
                 realizado = false;
             }
 
-            if (string.IsNullOrWhiteSpace(tbMatricula.Text))
+            if (string.IsNullOrWhiteSpace(tbMatricula.Text) )
             {
                 MyErrorProvider.SetError(tbNombre, "EL CAMPO MATRICULA NO PUEDE ESTAR VACIO");
                 tbMatricula.Focus();
