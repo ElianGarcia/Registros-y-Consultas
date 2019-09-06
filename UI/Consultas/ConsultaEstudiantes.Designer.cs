@@ -82,8 +82,7 @@
             "ID",
             "Nombre",
             "Cedula",
-            "Telefono",
-            "Direccion"});
+            "Matricula"});
             this.cbFiltrar.Location = new System.Drawing.Point(190, 26);
             this.cbFiltrar.Margin = new System.Windows.Forms.Padding(2);
             this.cbFiltrar.Name = "cbFiltrar";

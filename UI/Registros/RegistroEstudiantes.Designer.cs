@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroEstudiantes));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel = new System.Windows.Forms.Panel();
+            this.tbMatricula = new System.Windows.Forms.MaskedTextBox();
             this.tbCedula = new System.Windows.Forms.MaskedTextBox();
             this.tbTelefono = new System.Windows.Forms.MaskedTextBox();
             this.tbCelular = new System.Windows.Forms.MaskedTextBox();
@@ -57,13 +59,32 @@
             this.btEliminar = new System.Windows.Forms.Button();
             this.btGuardar = new System.Windows.Forms.Button();
             this.btNuevo = new System.Windows.Forms.Button();
-            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tbMatricula = new System.Windows.Forms.MaskedTextBox();
+            this.MatriculaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.NombreerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ApellidoserrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TelefonoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CelularerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.EmailerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CedulaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.SexoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.BalanceerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.FechaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.IDerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MatriculaerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NombreerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ApellidoserrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TelefonoerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CelularerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmailerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CedulaerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SexoerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BalanceerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FechaerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -79,9 +100,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(3, 12);
+            this.panel1.Location = new System.Drawing.Point(17, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(117, 283);
+            this.panel1.Size = new System.Drawing.Size(117, 287);
             this.panel1.TabIndex = 0;
             // 
             // label11
@@ -197,10 +218,18 @@
             this.panel.Controls.Add(this.tbEmail);
             this.panel.Controls.Add(this.tbNombre);
             this.panel.Controls.Add(this.tbApellidos);
-            this.panel.Location = new System.Drawing.Point(126, 12);
+            this.panel.Location = new System.Drawing.Point(138, 12);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(201, 287);
             this.panel.TabIndex = 1;
+            // 
+            // tbMatricula
+            // 
+            this.tbMatricula.Location = new System.Drawing.Point(2, 41);
+            this.tbMatricula.Mask = "0000-0000";
+            this.tbMatricula.Name = "tbMatricula";
+            this.tbMatricula.Size = new System.Drawing.Size(199, 20);
+            this.tbMatricula.TabIndex = 18;
             // 
             // tbCedula
             // 
@@ -213,14 +242,13 @@
             // tbTelefono
             // 
             this.tbTelefono.Location = new System.Drawing.Point(3, 113);
-            this.tbTelefono.Mask = "(999)000-0000";
+            this.tbTelefono.Mask = "000-000-0000";
             this.tbTelefono.Name = "tbTelefono";
             this.tbTelefono.Size = new System.Drawing.Size(198, 20);
             this.tbTelefono.TabIndex = 16;
             // 
             // tbCelular
             // 
-            this.MyErrorProvider.SetError(this.tbCelular, "EL CAMPO CELULAR NO PUEDE ESTAR VACIO");
             this.tbCelular.Location = new System.Drawing.Point(3, 137);
             this.tbCelular.Mask = "000-000-0000";
             this.tbCelular.Name = "tbCelular";
@@ -298,16 +326,16 @@
             this.panel2.Controls.Add(this.btEliminar);
             this.panel2.Controls.Add(this.btGuardar);
             this.panel2.Controls.Add(this.btNuevo);
-            this.panel2.Location = new System.Drawing.Point(3, 306);
+            this.panel2.Location = new System.Drawing.Point(17, 306);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(324, 59);
+            this.panel2.Size = new System.Drawing.Size(328, 59);
             this.panel2.TabIndex = 2;
             // 
             // btEliminar
             // 
             this.btEliminar.Image = global::Register.Properties.Resources.error;
             this.btEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btEliminar.Location = new System.Drawing.Point(240, 3);
+            this.btEliminar.Location = new System.Drawing.Point(238, 3);
             this.btEliminar.Name = "btEliminar";
             this.btEliminar.Size = new System.Drawing.Size(84, 53);
             this.btEliminar.TabIndex = 2;
@@ -342,26 +370,59 @@
             this.btNuevo.UseVisualStyleBackColor = true;
             this.btNuevo.Click += new System.EventHandler(this.BtNuevo_Click);
             // 
-            // MyErrorProvider
+            // MatriculaerrorProvider
             // 
-            this.MyErrorProvider.ContainerControl = this;
+            this.MatriculaerrorProvider.ContainerControl = this;
             // 
-            // tbMatricula
+            // NombreerrorProvider
             // 
-            this.tbMatricula.Location = new System.Drawing.Point(2, 41);
-            this.tbMatricula.Mask = "0000-0000";
-            this.tbMatricula.Name = "tbMatricula";
-            this.tbMatricula.Size = new System.Drawing.Size(199, 20);
-            this.tbMatricula.TabIndex = 18;
+            this.NombreerrorProvider.ContainerControl = this;
+            // 
+            // ApellidoserrorProvider
+            // 
+            this.ApellidoserrorProvider.ContainerControl = this;
+            // 
+            // TelefonoerrorProvider
+            // 
+            this.TelefonoerrorProvider.ContainerControl = this;
+            // 
+            // CelularerrorProvider
+            // 
+            this.CelularerrorProvider.ContainerControl = this;
+            // 
+            // EmailerrorProvider
+            // 
+            this.EmailerrorProvider.ContainerControl = this;
+            // 
+            // CedulaerrorProvider
+            // 
+            this.CedulaerrorProvider.ContainerControl = this;
+            // 
+            // SexoerrorProvider
+            // 
+            this.SexoerrorProvider.ContainerControl = this;
+            // 
+            // BalanceerrorProvider
+            // 
+            this.BalanceerrorProvider.ContainerControl = this;
+            // 
+            // FechaerrorProvider
+            // 
+            this.FechaerrorProvider.ContainerControl = this;
+            // 
+            // IDerrorProvider
+            // 
+            this.IDerrorProvider.ContainerControl = this;
             // 
             // RegistroEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 365);
+            this.ClientSize = new System.Drawing.Size(369, 365);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistroEstudiantes";
             this.Text = "Registro";
             this.panel1.ResumeLayout(false);
@@ -370,7 +431,17 @@
             this.panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MatriculaerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NombreerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ApellidoserrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TelefonoerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CelularerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmailerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CedulaerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SexoerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BalanceerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FechaerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDerrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -401,11 +472,21 @@
         private System.Windows.Forms.Button btGuardar;
         private System.Windows.Forms.Button btNuevo;
         private System.Windows.Forms.DateTimePicker FechaNacimientoTimePicker;
-        private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.ComboBox cbSexo;
         private System.Windows.Forms.MaskedTextBox tbTelefono;
         private System.Windows.Forms.MaskedTextBox tbCelular;
         private System.Windows.Forms.MaskedTextBox tbCedula;
         private System.Windows.Forms.MaskedTextBox tbMatricula;
+        private System.Windows.Forms.ErrorProvider MatriculaerrorProvider;
+        private System.Windows.Forms.ErrorProvider NombreerrorProvider;
+        private System.Windows.Forms.ErrorProvider ApellidoserrorProvider;
+        private System.Windows.Forms.ErrorProvider TelefonoerrorProvider;
+        private System.Windows.Forms.ErrorProvider CelularerrorProvider;
+        private System.Windows.Forms.ErrorProvider EmailerrorProvider;
+        private System.Windows.Forms.ErrorProvider CedulaerrorProvider;
+        private System.Windows.Forms.ErrorProvider SexoerrorProvider;
+        private System.Windows.Forms.ErrorProvider BalanceerrorProvider;
+        private System.Windows.Forms.ErrorProvider FechaerrorProvider;
+        private System.Windows.Forms.ErrorProvider IDerrorProvider;
     }
 }

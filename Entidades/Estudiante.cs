@@ -14,11 +14,11 @@ namespace Register.Entidades
         public string Telefono { get; set; }
         public string Celular { get; set; }
         public string Email { get; set; }
-        public DateTime FechaNacimiento { get; set; }
+        public DateTime FechaDeNacimiento { get; set; }
         public char Sexo { get; set; }
-        public double Balance { get; set; }
+        public string Balance { get; set; }
 
-        public Estudiante(int id, string matricula, string nombre, string apellidos, string cedula, string telefono, string celular, string email, DateTime fechaNacimiento, char sexo, double balance)
+        public Estudiante(int id, string matricula, string nombre, string apellidos, string cedula, string telefono, string celular, string email, DateTime fechaNacimiento, char sexo, string balance)
         {
             Id = id;
             Matricula = matricula;
@@ -28,7 +28,7 @@ namespace Register.Entidades
             Telefono = telefono;
             Celular = celular;
             Email = email;
-            FechaNacimiento = fechaNacimiento;
+            FechaDeNacimiento = fechaNacimiento;
             Sexo = sexo;
             Balance = balance;
         }
@@ -43,9 +43,9 @@ namespace Register.Entidades
             Telefono = string.Empty;
             Celular = string.Empty;
             Email = string.Empty;
-            FechaNacimiento = DateTime.Now;
+            FechaDeNacimiento = DateTime.Now;
             Sexo = ' ';
-            Balance = 0.0;
+            Balance = string.Empty;
         }
     }
 }

@@ -45,7 +45,7 @@ namespace Register.UI.Consultas
                         break;
                 }
 
-                listado = listado.Where(c => c.FechaNacimiento.Date >= DesdeDateTimePicker.Value.Date && c.FechaNacimiento.Date <= HastaDateTimePicker.Value.Date).ToList();
+                listado = listado.Where(c => c.FechaDeNacimiento.Date >= DesdeDateTimePicker.Value.Date && c.FechaDeNacimiento.Date <= HastaDateTimePicker.Value.Date).ToList();
             }
             else
             {

@@ -13,6 +13,6 @@ create table Estudiantes
  Celular varchar(11) not null,
  Sexo char(1) not null,
  FechaDeNacimiento Date,
- Balance money,
+ Balance varchar(8),
  Email varchar(25),
  )
