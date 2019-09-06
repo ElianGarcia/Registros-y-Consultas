@@ -1,18 +1,19 @@
-create database EstudiantesDB
-go
-use EstudiantesDB
-go 
-create table Estudiantes 
+CREATE DATABASE EstudiantesDB
+GO
+USE EstudiantesDB
+GO
+
+CREATE TABLE Estudiantes
 (
- Id int primary key identity,
- Matricula varchar(9) not null,
- Nombre varchar(15) not null,
- Apellidos varchar(20) not null,
- Cedula varchar(11) not null,
- Telefono varchar(11),
- Celular varchar(11) not null,
- Sexo char(1) not null,
- FechaDeNacimiento Date,
- Balance varchar(8),
- Email varchar(25),
- )
+	Id int,
+	Matricula varchar(9),
+	Nombre varchar(15),
+	Apellidos varchar(25),
+	Cedula varchar(11),
+	Telefono varchar(11),
+	Celular varchar(11),
+	Email varchar (25),
+	FechaDeNacimiento date,
+	Sexo varchar(1),
+	Balance varchar(8)
+)

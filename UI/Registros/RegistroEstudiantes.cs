@@ -42,7 +42,7 @@ namespace Register.UI.Registros
         private Estudiante LlenaCLase()
         {
             Estudiante estudiante = new Estudiante();
-            estudiante.Id = Convert.ToInt32(IDnumericUpDown.Value);
+            //estudiante.Id = Convert.ToInt32(IDnumericUpDown.Value);
             estudiante.Matricula = tbMatricula.Text;
             estudiante.Nombre = tbNombre.Text;
             estudiante.Apellidos = tbApellidos.Text;
@@ -51,7 +51,8 @@ namespace Register.UI.Registros
             estudiante.Celular = tbCelular.Text;
             estudiante.Email = tbEmail.Text;
             estudiante.FechaDeNacimiento = FechaNacimientoTimePicker.Value;
-            estudiante.Sexo = (char) cbSexo.SelectedItem;
+            estudiante.Sexo = cbSexo.SelectedItem.ToString();
+
             estudiante.Balance = tbBalance.Text;
             return estudiante;
         }
@@ -67,14 +68,26 @@ namespace Register.UI.Registros
             tbCelular.Text = estudiante.Celular;
             tbEmail.Text = estudiante.Email;
             FechaNacimientoTimePicker.Value  = estudiante.FechaDeNacimiento;
-            cbSexo.SelectedItem = estudiante.Sexo;
+
+            if (estudiante.Sexo == "M")
+            {
+                cbSexo.Text = "M";
+                cbSexo.Show();
+            }
+
+            if (estudiante.Sexo == "F")
+            {
+                cbSexo.Text = "F";
+                cbSexo.Show();
+            }
+
             tbBalance.Text = estudiante.Balance.ToString();
 
         }
 
         private bool Validar()
         {
-            bool realizado = false;
+            bool realizado = true;
             MatriculaerrorProvider.Clear();
             ApellidoserrorProvider.Clear();
             NombreerrorProvider.Clear();
