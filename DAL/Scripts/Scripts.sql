@@ -5,7 +5,7 @@ GO
 
 CREATE TABLE Estudiantes
 (
-	Id int,
+	Id int primary key identity,
 	Matricula varchar(9),
 	Nombre varchar(15),
 	Apellidos varchar(25),
@@ -14,6 +14,6 @@ CREATE TABLE Estudiantes
 	Celular varchar(11),
 	Email varchar (25),
 	FechaDeNacimiento date,
-	Sexo varchar(1),
-	Balance varchar(8)
+	Sexo varchar(2),
+	Balance decimal
 )

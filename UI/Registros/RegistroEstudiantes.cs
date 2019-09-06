@@ -42,7 +42,7 @@ namespace Register.UI.Registros
         private Estudiante LlenaCLase()
         {
             Estudiante estudiante = new Estudiante();
-            //estudiante.Id = Convert.ToInt32(IDnumericUpDown.Value);
+            estudiante.Id = Convert.ToInt32(IDnumericUpDown.Value);
             estudiante.Matricula = tbMatricula.Text;
             estudiante.Nombre = tbNombre.Text;
             estudiante.Apellidos = tbApellidos.Text;
@@ -53,7 +53,7 @@ namespace Register.UI.Registros
             estudiante.FechaDeNacimiento = FechaNacimientoTimePicker.Value;
             estudiante.Sexo = cbSexo.SelectedItem.ToString();
 
-            estudiante.Balance = tbBalance.Text;
+            estudiante.Balance = Convert.ToDecimal(tbBalance.Text);
             return estudiante;
         }
 
@@ -194,13 +194,14 @@ namespace Register.UI.Registros
 
         private void BtGuardar_Click(object sender, EventArgs e)
         {
-            Estudiante estudiante;
+            Estudiante estudiante = new Estudiante();
             bool realizado = false;
 
             if (!Validar())
                 return;
 
             estudiante = LlenaCLase();
+
 
             if (IDnumericUpDown.Value == 0)
                 realizado = EstudiantesBLL.Guardar(estudiante);
@@ -272,7 +273,6 @@ namespace Register.UI.Registros
             {
                 MessageBox.Show("Estudiante No Encontrado");
             }
-
         }
     }
 }
