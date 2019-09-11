@@ -54,8 +54,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\EstudiantesBLL.cs" />
+    <Compile Include="BLL\InscripcionesBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Estudiante.cs" />
+    <Compile Include="Entidades\Inscripcion.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +83,12 @@
     <Compile Include="UI\Registros\RegistroEstudiantes.Designer.cs">
       <DependentUpon>RegistroEstudiantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registros\RegistroInscripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\RegistroInscripcion.Designer.cs">
+      <DependentUpon>RegistroInscripcion.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RegistroEstudiantes.resx">
       <DependentUpon>RegistroEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\RegistroInscripcion.resx">
+      <DependentUpon>RegistroInscripcion.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -132,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAL\Scripts\Scripts.sql" />
+    <None Include="Resources\ButtonColor.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,5 +15,17 @@ CREATE TABLE Estudiantes
 	Email varchar (25),
 	FechaDeNacimiento date,
 	Sexo varchar(2),
-	Balance decimal
+	Balance float
+)
+
+GO
+CREATE TABLE Incripciones
+(
+	Id int primary key identity,
+	EstudianteID int,
+	Comentarios varchar(80),
+	Fecha date,
+	Balance float,
+	Monto float,
+	Deposito float
 )

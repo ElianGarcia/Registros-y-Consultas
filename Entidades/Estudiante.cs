@@ -16,9 +16,9 @@ namespace Register.Entidades
         public string Email { get; set; }
         public DateTime FechaDeNacimiento { get; set; }
         public string Sexo { get; set; }
-        public decimal Balance { get; set; }
+        public float Balance { get; set; }
 
-        public Estudiante(int id, string matricula, string nombre, string apellidos, string cedula, string telefono, string celular, string email, DateTime fechaNacimiento, string sexo, decimal balance)
+        public Estudiante(int id, string matricula, string nombre, string apellidos, string cedula, string telefono, string celular, string email, DateTime fechaNacimiento, string sexo, float balance)
         {
             Id = id;
             Matricula = matricula;

@@ -26,17 +26,7 @@ namespace Register.UI.Registros
             tbEmail.Text = string.Empty;
             FechaNacimientoTimePicker.Value = DateTime.Now;
             tbBalance.Text = string.Empty;
-            MatriculaerrorProvider.Clear();
-            ApellidoserrorProvider.Clear();
-            NombreerrorProvider.Clear();
-            CelularerrorProvider.Clear();
-            CedulaerrorProvider.Clear();
-            TelefonoerrorProvider.Clear();
-            FechaerrorProvider.Clear();
-            BalanceerrorProvider.Clear();
-            EmailerrorProvider.Clear();
-            IDerrorProvider.Clear();
-            SexoerrorProvider.Clear();
+            errorProvider.Clear();
         }
 
         private Estudiante LlenaCLase()
@@ -53,7 +43,7 @@ namespace Register.UI.Registros
             estudiante.FechaDeNacimiento = FechaNacimientoTimePicker.Value;
             estudiante.Sexo = cbSexo.SelectedItem.ToString();
 
-            estudiante.Balance = Convert.ToDecimal(tbBalance.Text);
+            estudiante.Balance = Convert.ToSingle(tbBalance.Text);
             return estudiante;
         }
 
@@ -88,91 +78,81 @@ namespace Register.UI.Registros
         private bool Validar()
         {
             bool realizado = true;
-            MatriculaerrorProvider.Clear();
-            ApellidoserrorProvider.Clear();
-            NombreerrorProvider.Clear();
-            CelularerrorProvider.Clear();
-            CedulaerrorProvider.Clear();
-            TelefonoerrorProvider.Clear();
-            FechaerrorProvider.Clear();
-            BalanceerrorProvider.Clear();
-            EmailerrorProvider.Clear();
-            IDerrorProvider.Clear();
-            SexoerrorProvider.Clear();
+            errorProvider.Clear();
 
             if (string.IsNullOrWhiteSpace(tbMatricula.Text))
             {
-                MatriculaerrorProvider.SetError(tbMatricula, "EL CAMPO MATRICULA NO PUEDE ESTAR VACIO");
+                errorProvider.SetError(tbMatricula, "EL CAMPO MATRICULA NO PUEDE ESTAR VACIO");
                 tbMatricula.Focus();
                 realizado = false;
             }
 
             if (string.IsNullOrWhiteSpace(tbNombre.Text))
             {
-                NombreerrorProvider.SetError(tbNombre, "EL CAMPO NOMBRE NO PUEDE ESTAR VACIO");
+                errorProvider.SetError(tbNombre, "EL CAMPO NOMBRE NO PUEDE ESTAR VACIO");
                 tbNombre.Focus();
                 realizado = false;
             }
 
             if (string.IsNullOrWhiteSpace(IDnumericUpDown.Text))
             {
-                IDerrorProvider.SetError(IDnumericUpDown, "EL CAMPO ID NO PUEDE ESTAR VACIO");
+                errorProvider.SetError(IDnumericUpDown, "EL CAMPO ID NO PUEDE ESTAR VACIO");
                 IDnumericUpDown.Focus();
                 realizado = false;
             }
 
             if (string.IsNullOrWhiteSpace(tbCedula.Text.Replace("-", "")))
             {
-                CedulaerrorProvider.SetError(tbCedula, "EL CAMPO CEDULA NO PUEDE ESTAR VACIO");
+                errorProvider.SetError(tbCedula, "EL CAMPO CEDULA NO PUEDE ESTAR VACIO");
                 tbCedula.Focus();
                 realizado = false;
             }
 
             if (string.IsNullOrWhiteSpace(tbApellidos.Text))
             {
-                ApellidoserrorProvider.SetError(tbApellidos, "EL CAMPO TELEFONO NO PUEDE ESTAR VACIO");
+                errorProvider.SetError(tbApellidos, "EL CAMPO TELEFONO NO PUEDE ESTAR VACIO");
                 tbApellidos.Focus();
                 realizado = false;
             }
 
             if (string.IsNullOrWhiteSpace(tbCelular.Text.Replace("-", "")))
             {
-                CelularerrorProvider.SetError(tbCelular, "EL CAMPO CELULAR NO PUEDE ESTAR VACIO");
+                errorProvider.SetError(tbCelular, "EL CAMPO CELULAR NO PUEDE ESTAR VACIO");
                 tbCelular.Focus();
                 realizado = false;
             }
 
             if (string.IsNullOrWhiteSpace(tbTelefono.Text.Replace("-", "")))
             {
-                TelefonoerrorProvider.SetError(tbTelefono, "EL CAMPO TELEFONO NO PUEDE ESTAR VACIO");
+                errorProvider.SetError(tbTelefono, "EL CAMPO TELEFONO NO PUEDE ESTAR VACIO");
                 tbTelefono.Focus();
                 realizado = false;
             }
 
             if (string.IsNullOrWhiteSpace(tbEmail.Text))
             {
-                EmailerrorProvider.SetError(tbEmail, "EL CAMPO EMAIL NO PUEDE ESTAR VACIO");
+                errorProvider.SetError(tbEmail, "EL CAMPO EMAIL NO PUEDE ESTAR VACIO");
                 tbEmail.Focus();
                 realizado = false;
             }
 
             if (FechaNacimientoTimePicker.Value == DateTime.Now)
             {
-                FechaerrorProvider.SetError(FechaNacimientoTimePicker, "EL CAMPO FECHA DE NACIMIENTO NO PUEDE SER IGUAL A LA FECHA ACTUAL");
+                errorProvider.SetError(FechaNacimientoTimePicker, "EL CAMPO FECHA DE NACIMIENTO NO PUEDE SER IGUAL A LA FECHA ACTUAL");
                 FechaNacimientoTimePicker.Focus();
                 realizado = false;
             }
 
             if (string.IsNullOrWhiteSpace(cbSexo.Text))
             {
-                SexoerrorProvider.SetError(cbSexo, "EL CAMPO SEXO NO PUEDE ESTAR VACIO, POR FAVOR SELECCIONE UNA OPCION");
+                errorProvider.SetError(cbSexo, "EL CAMPO SEXO NO PUEDE ESTAR VACIO, POR FAVOR SELECCIONE UNA OPCION");
                 cbSexo.Focus();
                 realizado = false;
             }
 
             if (string.IsNullOrWhiteSpace(tbBalance.Text))
             {
-                BalanceerrorProvider.SetError(tbBalance, "EL CAMPO BALANCE NO PUEDE ESTAR VACIO, POR FAVOR SELECCIONE UNA OPCION");
+                errorProvider.SetError(tbBalance, "EL CAMPO BALANCE NO PUEDE ESTAR VACIO, POR FAVOR SELECCIONE UNA OPCION");
                 tbBalance.Focus();
                 realizado = false;
             }
@@ -227,17 +207,7 @@ namespace Register.UI.Registros
 
         private void BtEliminar_Click(object sender, EventArgs e)
         {
-            MatriculaerrorProvider.Clear();
-            ApellidoserrorProvider.Clear();
-            NombreerrorProvider.Clear();
-            CelularerrorProvider.Clear();
-            CedulaerrorProvider.Clear();
-            TelefonoerrorProvider.Clear();
-            FechaerrorProvider.Clear();
-            BalanceerrorProvider.Clear();
-            EmailerrorProvider.Clear();
-            IDerrorProvider.Clear();
-            SexoerrorProvider.Clear();
+            errorProvider.Clear();
 
             int id;
             int.TryParse(IDnumericUpDown.Text, out id);
@@ -250,7 +220,7 @@ namespace Register.UI.Registros
 
             } else
             {
-                IDerrorProvider.SetError(IDnumericUpDown, "No se puede eliminar un estudiante inexistente");
+                errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un estudiante inexistente");
             }
 
         }

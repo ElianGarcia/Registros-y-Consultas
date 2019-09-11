@@ -50,6 +50,7 @@
             this.ConsultaDataGridView.Location = new System.Drawing.Point(9, 51);
             this.ConsultaDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.ConsultaDataGridView.Name = "ConsultaDataGridView";
+            this.ConsultaDataGridView.ReadOnly = true;
             this.ConsultaDataGridView.RowTemplate.Height = 24;
             this.ConsultaDataGridView.Size = new System.Drawing.Size(606, 330);
             this.ConsultaDataGridView.TabIndex = 0;
