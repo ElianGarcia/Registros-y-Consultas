@@ -28,12 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Consulta De Inscripciones";
-            this.Name = "ConsultaInscripciones";
-
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaInscripciones));
             this.ConsultaDataGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,8 +44,8 @@
             // 
             // ConsultaDataGridView
             // 
-            this.ConsultaDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.ConsultaDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ConsultaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ConsultaDataGridView.Location = new System.Drawing.Point(9, 51);
@@ -64,20 +59,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Black", 9F);
             this.label1.Location = new System.Drawing.Point(188, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.Size = new System.Drawing.Size(39, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Filtro";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Black", 9F);
             this.label2.Location = new System.Drawing.Point(283, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.Size = new System.Drawing.Size(53, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "Criterio";
             // 
@@ -95,27 +92,29 @@
             // 
             // tbCriterio
             // 
-            this.tbCriterio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbCriterio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbCriterio.Location = new System.Drawing.Point(286, 26);
             this.tbCriterio.Margin = new System.Windows.Forms.Padding(2);
             this.tbCriterio.Name = "tbCriterio";
-            this.tbCriterio.Size = new System.Drawing.Size(242, 20);
+            this.tbCriterio.Size = new System.Drawing.Size(220, 20);
             this.tbCriterio.TabIndex = 4;
             // 
             // btConsulta
             // 
             this.btConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btConsulta.Font = new System.Drawing.Font("Segoe UI Black", 9F);
             this.btConsulta.Image = global::Register.Properties.Resources.find;
             this.btConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btConsulta.Location = new System.Drawing.Point(532, 11);
+            this.btConsulta.Location = new System.Drawing.Point(510, 11);
             this.btConsulta.Margin = new System.Windows.Forms.Padding(2);
             this.btConsulta.Name = "btConsulta";
-            this.btConsulta.Size = new System.Drawing.Size(83, 36);
+            this.btConsulta.Size = new System.Drawing.Size(105, 36);
             this.btConsulta.TabIndex = 5;
             this.btConsulta.Text = "Consultar";
             this.btConsulta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btConsulta.UseVisualStyleBackColor = true;
+            this.btConsulta.Click += new System.EventHandler(this.BtConsulta_Click);
             // 
             // DesdeDateTimePicker
             // 
@@ -139,24 +138,26 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Black", 9F);
             this.label3.Location = new System.Drawing.Point(97, 9);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(42, 15);
             this.label3.TabIndex = 8;
             this.label3.Text = "Hasta";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Black", 9F);
             this.label4.Location = new System.Drawing.Point(8, 9);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.Size = new System.Drawing.Size(44, 15);
             this.label4.TabIndex = 9;
             this.label4.Text = "Desde";
             // 
-            // ConsultaEstudiantes
+            // ConsultaInscripciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -171,10 +172,15 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ConsultaDataGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.Name = "ConsultaInscripciones";
+            this.Text = "Consulta De Inscripciones";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
     }
 
         #endregion

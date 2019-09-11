@@ -43,12 +43,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel = new System.Windows.Forms.Panel();
+            this.tbBalance = new System.Windows.Forms.MaskedTextBox();
             this.tbMatricula = new System.Windows.Forms.MaskedTextBox();
             this.tbCedula = new System.Windows.Forms.MaskedTextBox();
             this.tbTelefono = new System.Windows.Forms.MaskedTextBox();
             this.tbCelular = new System.Windows.Forms.MaskedTextBox();
             this.cbSexo = new System.Windows.Forms.ComboBox();
             this.FechaNacimientoTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.btBuscar = new System.Windows.Forms.Button();
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbNombre = new System.Windows.Forms.TextBox();
@@ -57,8 +59,6 @@
             this.btEliminar = new System.Windows.Forms.Button();
             this.btGuardar = new System.Windows.Forms.Button();
             this.btNuevo = new System.Windows.Forms.Button();
-            this.btBuscar = new System.Windows.Forms.Button();
-            this.tbBalance = new System.Windows.Forms.MaskedTextBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel.SuspendLayout();
@@ -204,6 +204,15 @@
             this.panel.Size = new System.Drawing.Size(231, 287);
             this.panel.TabIndex = 1;
             // 
+            // tbBalance
+            // 
+            this.tbBalance.Location = new System.Drawing.Point(0, 257);
+            this.tbBalance.Mask = "99999.99";
+            this.tbBalance.Name = "tbBalance";
+            this.tbBalance.ReadOnly = true;
+            this.tbBalance.Size = new System.Drawing.Size(201, 20);
+            this.tbBalance.TabIndex = 19;
+            // 
             // tbMatricula
             // 
             this.tbMatricula.Location = new System.Drawing.Point(0, 41);
@@ -253,6 +262,20 @@
             this.FechaNacimientoTimePicker.Name = "FechaNacimientoTimePicker";
             this.FechaNacimientoTimePicker.Size = new System.Drawing.Size(201, 20);
             this.FechaNacimientoTimePicker.TabIndex = 12;
+            // 
+            // btBuscar
+            // 
+            this.btBuscar.Font = new System.Drawing.Font("Segoe UI Black", 9F);
+            this.btBuscar.Image = global::Register.Properties.Resources.find;
+            this.btBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btBuscar.Location = new System.Drawing.Point(110, 0);
+            this.btBuscar.Name = "btBuscar";
+            this.btBuscar.Size = new System.Drawing.Size(91, 36);
+            this.btBuscar.TabIndex = 11;
+            this.btBuscar.Text = "Buscar";
+            this.btBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btBuscar.UseVisualStyleBackColor = true;
+            this.btBuscar.Click += new System.EventHandler(this.BtBuscar_Click);
             // 
             // IDnumericUpDown
             // 
@@ -332,29 +355,6 @@
             this.btNuevo.UseVisualStyleBackColor = true;
             this.btNuevo.Click += new System.EventHandler(this.BtNuevo_Click);
             // 
-            // btBuscar
-            // 
-            this.btBuscar.Font = new System.Drawing.Font("Segoe UI Black", 9F);
-            this.btBuscar.Image = global::Register.Properties.Resources.find;
-            this.btBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btBuscar.Location = new System.Drawing.Point(110, 0);
-            this.btBuscar.Name = "btBuscar";
-            this.btBuscar.Size = new System.Drawing.Size(91, 36);
-            this.btBuscar.TabIndex = 11;
-            this.btBuscar.Text = "Buscar";
-            this.btBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btBuscar.UseVisualStyleBackColor = true;
-            this.btBuscar.Click += new System.EventHandler(this.BtBuscar_Click);
-            // 
-            // tbBalance
-            // 
-            this.tbBalance.Location = new System.Drawing.Point(0, 257);
-            this.tbBalance.Mask = "99999.99";
-            this.tbBalance.Name = "tbBalance";
-            this.tbBalance.ReadOnly = true;
-            this.tbBalance.Size = new System.Drawing.Size(201, 20);
-            this.tbBalance.TabIndex = 19;
-            // 
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
@@ -368,6 +368,7 @@
             this.Controls.Add(this.panel);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "RegistroEstudiantes";
             this.Text = "Registro";
             this.panel1.ResumeLayout(false);

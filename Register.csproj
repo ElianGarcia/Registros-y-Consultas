@@ -106,6 +106,9 @@
     <EmbeddedResource Include="UI\Consultas\ConsultaEstudiantes.resx">
       <DependentUpon>ConsultaEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\ConsultaInscripciones.resx">
+      <DependentUpon>ConsultaInscripciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RegistroEstudiantes.resx">
       <DependentUpon>RegistroEstudiantes.cs</DependentUpon>
     </EmbeddedResource>

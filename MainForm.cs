@@ -12,13 +12,6 @@ namespace Register
             InitializeComponent();
         }
 
-        private void ConsultaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ConsultaEstudiantes consulta = new ConsultaEstudiantes();
-            consulta.MdiParent = this;
-            consulta.Show();
-        }
-
         private void InscripcionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegistroInscripcion registroInscripcion = new RegistroInscripcion();
@@ -31,6 +24,20 @@ namespace Register
             RegistroEstudiantes registro = new RegistroEstudiantes();
             registro.MdiParent = this;
             registro.Show();
+        }
+
+        private void InscripcionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaInscripciones consultaInscripciones = new ConsultaInscripciones();
+            consultaInscripciones.MdiParent = this;
+            consultaInscripciones.Show();
+        }
+
+        private void EstudiantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaEstudiantes consultaEstudiantes = new ConsultaEstudiantes();
+            consultaEstudiantes.MdiParent = this;
+            consultaEstudiantes.Show();
         }
     }
 }

@@ -54,6 +54,6 @@ namespace Register.UI.Consultas
 
             ConsultaDataGridView.DataSource = null;
             ConsultaDataGridView.DataSource = listado;
-}
+        }
     }
 }

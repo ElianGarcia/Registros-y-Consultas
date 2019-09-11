@@ -264,6 +264,7 @@
             this.Controls.Add(this.panel);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "RegistroInscripcion";
             this.Text = "Registro De Inscripcion";
             this.panel1.ResumeLayout(false);
