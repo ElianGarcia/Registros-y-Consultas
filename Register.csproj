@@ -77,6 +77,12 @@
     <Compile Include="UI\Consultas\ConsultaEstudiantes.Designer.cs">
       <DependentUpon>ConsultaEstudiantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Consultas\ConsultaInscripciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\ConsultaInscripciones.Designer.cs">
+      <DependentUpon>ConsultaInscripciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\RegistroEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
