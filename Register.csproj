@@ -133,12 +133,6 @@
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\find.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\save.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\error.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -152,7 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAL\Scripts\Scripts.sql" />
-    <None Include="Resources\ButtonColor.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -29,7 +29,8 @@ namespace Register.UI.Registros
             inscripcion.Id = Convert.ToInt32(IDnumericUpDown.Value);
             inscripcion.Comentarios = tbComentario.Text;
             inscripcion.Deposito = Convert.ToSingle(tbDeposito.Text);
-            inscripcion.Balance = Convert.ToSingle(tbBalance.Text);
+            inscripcion.Balance = Convert.ToSingle(tbMonto.Text) - Convert.ToSingle(tbDeposito.Text);
+            tbBalance.Text = inscripcion.Balance.ToString();
             inscripcion.Fecha = FechaTimePicker.Value;
             inscripcion.Monto = Convert.ToSingle(tbMonto.Text);
 
@@ -44,7 +45,6 @@ namespace Register.UI.Registros
             tbDeposito.Text = inscripcion.Deposito.ToString();
             FechaTimePicker.Value = inscripcion.Fecha;
             tbBalance.Text = inscripcion.Balance.ToString();
-
         }
 
         private bool Validar()
@@ -110,11 +110,6 @@ namespace Register.UI.Registros
             }
         }
 
-        private void BtNuevo_Click(object sender, EventArgs e)
-        {
-            Limpiar();
-        }
-
         private void BtGuardar_Click(object sender, EventArgs e)
         {
             Inscripcion inscripcion = new Inscripcion();
@@ -139,7 +134,7 @@ namespace Register.UI.Registros
 
             if (realizado)
             {
-                Limpiar();
+                //Limpiar();
                 MessageBox.Show("GUARDADO EXITOSAMENTE", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -165,6 +160,11 @@ namespace Register.UI.Registros
             {
                 errorProvider.SetError(IDnumericUpDown, "No se puede eliminar una inscripcion inexistente");
             }
+        }
+
+        private void BtNuevo_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }

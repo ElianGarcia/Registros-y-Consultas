@@ -42,8 +42,6 @@ namespace Register.UI.Registros
             estudiante.Email = tbEmail.Text;
             estudiante.FechaDeNacimiento = FechaNacimientoTimePicker.Value;
             estudiante.Sexo = cbSexo.SelectedItem.ToString();
-
-            estudiante.Balance = Convert.ToSingle(tbBalance.Text);
             return estudiante;
         }
 

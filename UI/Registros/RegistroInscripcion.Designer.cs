@@ -189,6 +189,7 @@
             this.btBuscar.Text = "Buscar";
             this.btBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btBuscar.UseVisualStyleBackColor = true;
+            this.btBuscar.Click += new System.EventHandler(this.BtBuscar_Click);
             // 
             // IDnumericUpDown
             // 
@@ -230,6 +231,7 @@
             this.btEliminar.Text = "Eliminar";
             this.btEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btEliminar.UseVisualStyleBackColor = true;
+            this.btEliminar.Click += new System.EventHandler(this.BtEliminar_Click);
             // 
             // btGuardar
             // 
@@ -242,6 +244,7 @@
             this.btGuardar.Text = "Guardar";
             this.btGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btGuardar.UseVisualStyleBackColor = true;
+            this.btGuardar.Click += new System.EventHandler(this.BtGuardar_Click);
             // 
             // btNuevo
             // 
@@ -254,6 +257,7 @@
             this.btNuevo.Text = "Nuevo";
             this.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btNuevo.UseVisualStyleBackColor = true;
+            this.btNuevo.Click += new System.EventHandler(this.BtNuevo_Click);
             // 
             // RegistroInscripcion
             // 
