@@ -33,31 +33,31 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel = new System.Windows.Forms.Panel();
-            this.tbMonto = new System.Windows.Forms.MaskedTextBox();
-            this.tbDeposito = new System.Windows.Forms.MaskedTextBox();
-            this.tbBalance = new System.Windows.Forms.MaskedTextBox();
+            this.tbBalance = new System.Windows.Forms.TextBox();
+            this.tbMonto = new System.Windows.Forms.TextBox();
+            this.tbDeposito = new System.Windows.Forms.TextBox();
+            this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.FechaTimePicker = new System.Windows.Forms.DateTimePicker();
             this.btBuscar = new System.Windows.Forms.Button();
-            this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.IDInscripcionUpDown = new System.Windows.Forms.NumericUpDown();
             this.tbComentario = new System.Windows.Forms.TextBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.btEliminar = new System.Windows.Forms.Button();
             this.btGuardar = new System.Windows.Forms.Button();
             this.btNuevo = new System.Windows.Forms.Button();
-            this.IDInscripcionUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDInscripcionUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.IDInscripcionUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -66,9 +66,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 15);
+            this.label1.Size = new System.Drawing.Size(94, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ID Estudiante:";
+            this.label1.Text = "ID Inscripcion:";
             // 
             // label2
             // 
@@ -93,6 +93,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(95, 199);
             this.panel1.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Black", 9F);
+            this.label7.Location = new System.Drawing.Point(3, 38);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(92, 15);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "ID Estudiante:";
             // 
             // label6
             // 
@@ -136,44 +146,49 @@
             // 
             // panel
             // 
-            this.panel.Controls.Add(this.IDInscripcionUpDown);
+            this.panel.Controls.Add(this.tbBalance);
             this.panel.Controls.Add(this.tbMonto);
             this.panel.Controls.Add(this.tbDeposito);
-            this.panel.Controls.Add(this.tbBalance);
+            this.panel.Controls.Add(this.IDnumericUpDown);
             this.panel.Controls.Add(this.FechaTimePicker);
             this.panel.Controls.Add(this.btBuscar);
-            this.panel.Controls.Add(this.IDnumericUpDown);
+            this.panel.Controls.Add(this.IDInscripcionUpDown);
             this.panel.Controls.Add(this.tbComentario);
             this.panel.Location = new System.Drawing.Point(113, 12);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(233, 199);
             this.panel.TabIndex = 3;
             // 
+            // tbBalance
+            // 
+            this.tbBalance.Location = new System.Drawing.Point(0, 134);
+            this.tbBalance.Name = "tbBalance";
+            this.tbBalance.ReadOnly = true;
+            this.tbBalance.Size = new System.Drawing.Size(201, 20);
+            this.tbBalance.TabIndex = 22;
+            // 
             // tbMonto
             // 
             this.tbMonto.Location = new System.Drawing.Point(0, 86);
-            this.tbMonto.Mask = "99999.99";
             this.tbMonto.Name = "tbMonto";
             this.tbMonto.Size = new System.Drawing.Size(201, 20);
-            this.tbMonto.TabIndex = 18;
+            this.tbMonto.TabIndex = 21;
+            this.tbMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbMonto_KeyPress);
             // 
             // tbDeposito
             // 
             this.tbDeposito.Location = new System.Drawing.Point(0, 110);
-            this.tbDeposito.Mask = "99999.99";
             this.tbDeposito.Name = "tbDeposito";
             this.tbDeposito.Size = new System.Drawing.Size(201, 20);
-            this.tbDeposito.TabIndex = 16;
+            this.tbDeposito.TabIndex = 20;
+            this.tbDeposito.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbDeposito_KeyPress);
             // 
-            // tbBalance
+            // IDnumericUpDown
             // 
-            this.tbBalance.Location = new System.Drawing.Point(0, 134);
-            this.tbBalance.Mask = "99999.99";
-            this.tbBalance.Name = "tbBalance";
-            this.tbBalance.ReadOnly = true;
-            this.tbBalance.Size = new System.Drawing.Size(201, 20);
-            this.tbBalance.TabIndex = 15;
-            this.tbBalance.ValidatingType = typeof(double);
+            this.IDnumericUpDown.Location = new System.Drawing.Point(0, 38);
+            this.IDnumericUpDown.Name = "IDnumericUpDown";
+            this.IDnumericUpDown.Size = new System.Drawing.Size(201, 20);
+            this.IDnumericUpDown.TabIndex = 19;
             // 
             // FechaTimePicker
             // 
@@ -196,12 +211,12 @@
             this.btBuscar.UseVisualStyleBackColor = true;
             this.btBuscar.Click += new System.EventHandler(this.BtBuscar_Click);
             // 
-            // IDnumericUpDown
+            // IDInscripcionUpDown
             // 
-            this.IDnumericUpDown.Location = new System.Drawing.Point(0, 10);
-            this.IDnumericUpDown.Name = "IDnumericUpDown";
-            this.IDnumericUpDown.Size = new System.Drawing.Size(96, 20);
-            this.IDnumericUpDown.TabIndex = 14;
+            this.IDInscripcionUpDown.Location = new System.Drawing.Point(0, 10);
+            this.IDInscripcionUpDown.Name = "IDInscripcionUpDown";
+            this.IDInscripcionUpDown.Size = new System.Drawing.Size(96, 20);
+            this.IDInscripcionUpDown.TabIndex = 14;
             // 
             // tbComentario
             // 
@@ -264,23 +279,6 @@
             this.btNuevo.UseVisualStyleBackColor = true;
             this.btNuevo.Click += new System.EventHandler(this.BtNuevo_Click);
             // 
-            // IDInscripcionUpDown
-            // 
-            this.IDInscripcionUpDown.Location = new System.Drawing.Point(0, 38);
-            this.IDInscripcionUpDown.Name = "IDInscripcionUpDown";
-            this.IDInscripcionUpDown.Size = new System.Drawing.Size(201, 20);
-            this.IDInscripcionUpDown.TabIndex = 19;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Black", 9F);
-            this.label7.Location = new System.Drawing.Point(3, 38);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 15);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "ID Inscripcion:";
-            // 
             // RegistroInscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -298,9 +296,9 @@
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDInscripcionUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.IDInscripcionUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -315,19 +313,19 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel;
-        private System.Windows.Forms.MaskedTextBox tbDeposito;
         private System.Windows.Forms.DateTimePicker FechaTimePicker;
-        private System.Windows.Forms.MaskedTextBox tbBalance;
         private System.Windows.Forms.Button btBuscar;
-        private System.Windows.Forms.NumericUpDown IDnumericUpDown;
+        private System.Windows.Forms.NumericUpDown IDInscripcionUpDown;
         private System.Windows.Forms.TextBox tbComentario;
-        private System.Windows.Forms.MaskedTextBox tbMonto;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btEliminar;
         private System.Windows.Forms.Button btGuardar;
         private System.Windows.Forms.Button btNuevo;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown IDInscripcionUpDown;
+        private System.Windows.Forms.NumericUpDown IDnumericUpDown;
+        private System.Windows.Forms.TextBox tbBalance;
+        private System.Windows.Forms.TextBox tbMonto;
+        private System.Windows.Forms.TextBox tbDeposito;
     }
 }

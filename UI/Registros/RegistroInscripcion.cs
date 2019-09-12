@@ -1,6 +1,7 @@
 ﻿using Register.BLL;
 using Register.Entidades;
 using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace Register.UI.Registros
@@ -14,8 +15,8 @@ namespace Register.UI.Registros
 
         private void Limpiar()
         {
-            IDnumericUpDown.Value = 0;
             IDInscripcionUpDown.Value = 0;
+            IDnumericUpDown.Value = 0;
             FechaTimePicker.Value = DateTime.Now;
             tbComentario.Text = string.Empty;
             tbBalance.Text = string.Empty;
@@ -34,14 +35,9 @@ namespace Register.UI.Registros
             inscripcion.Comentarios = tbComentario.Text;
             inscripcion.Deposito = Convert.ToSingle(tbDeposito.Text);
             
-            if (string.IsNullOrWhiteSpace(tbBalance.Text))
-            {
-                inscripcion.Balance = Convert.ToSingle(tbMonto.Text) - Convert.ToSingle(tbDeposito.Text);
-            } else
-            {
-                inscripcion.Balance -= Convert.ToSingle(tbDeposito.Text);
-            }
-
+            inscripcion.Balance = Convert.ToSingle(tbMonto.Text);
+            inscripcion.Balance = (inscripcion.Balance) - (Convert.ToSingle(tbDeposito.Text));
+            
             tbBalance.Text = inscripcion.Balance.ToString();
             inscripcion.Fecha = FechaTimePicker.Value;
             inscripcion.Monto = Convert.ToSingle(tbMonto.Text);
@@ -177,6 +173,26 @@ namespace Register.UI.Registros
         private void BtNuevo_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void TbMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CultureInfo cultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture;
+
+            if (char.IsNumber(e.KeyChar) || e.KeyChar.ToString() == cultureInfo.NumberFormat.NumberDecimalSeparator)
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void TbDeposito_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CultureInfo cultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture;
+
+            if (char.IsNumber(e.KeyChar) || e.KeyChar.ToString() == cultureInfo.NumberFormat.NumberDecimalSeparator)
+                e.Handled = false;
+            else
+                e.Handled = true;
         }
     }
 }
