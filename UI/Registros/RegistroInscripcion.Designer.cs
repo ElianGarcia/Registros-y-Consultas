@@ -50,11 +50,14 @@
             this.btEliminar = new System.Windows.Forms.Button();
             this.btGuardar = new System.Windows.Forms.Button();
             this.btNuevo = new System.Windows.Forms.Button();
+            this.IDInscripcionUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IDInscripcionUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -71,7 +74,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 39);
+            this.label2.Location = new System.Drawing.Point(3, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 15);
             this.label2.TabIndex = 1;
@@ -79,6 +82,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -87,14 +91,14 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(95, 163);
+            this.panel1.Size = new System.Drawing.Size(95, 199);
             this.panel1.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 113);
+            this.label6.Location = new System.Drawing.Point(3, 139);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 15);
             this.label6.TabIndex = 5;
@@ -104,7 +108,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 89);
+            this.label5.Location = new System.Drawing.Point(3, 115);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 15);
             this.label5.TabIndex = 4;
@@ -114,7 +118,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 65);
+            this.label4.Location = new System.Drawing.Point(3, 91);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 15);
             this.label4.TabIndex = 3;
@@ -124,7 +128,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 137);
+            this.label3.Location = new System.Drawing.Point(3, 163);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 15);
             this.label3.TabIndex = 2;
@@ -132,6 +136,7 @@
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.IDInscripcionUpDown);
             this.panel.Controls.Add(this.tbMonto);
             this.panel.Controls.Add(this.tbDeposito);
             this.panel.Controls.Add(this.tbBalance);
@@ -141,12 +146,12 @@
             this.panel.Controls.Add(this.tbComentario);
             this.panel.Location = new System.Drawing.Point(113, 12);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(233, 163);
+            this.panel.Size = new System.Drawing.Size(233, 199);
             this.panel.TabIndex = 3;
             // 
             // tbMonto
             // 
-            this.tbMonto.Location = new System.Drawing.Point(0, 65);
+            this.tbMonto.Location = new System.Drawing.Point(0, 86);
             this.tbMonto.Mask = "99999.99";
             this.tbMonto.Name = "tbMonto";
             this.tbMonto.Size = new System.Drawing.Size(201, 20);
@@ -154,7 +159,7 @@
             // 
             // tbDeposito
             // 
-            this.tbDeposito.Location = new System.Drawing.Point(0, 89);
+            this.tbDeposito.Location = new System.Drawing.Point(0, 110);
             this.tbDeposito.Mask = "99999.99";
             this.tbDeposito.Name = "tbDeposito";
             this.tbDeposito.Size = new System.Drawing.Size(201, 20);
@@ -162,7 +167,7 @@
             // 
             // tbBalance
             // 
-            this.tbBalance.Location = new System.Drawing.Point(0, 113);
+            this.tbBalance.Location = new System.Drawing.Point(0, 134);
             this.tbBalance.Mask = "99999.99";
             this.tbBalance.Name = "tbBalance";
             this.tbBalance.ReadOnly = true;
@@ -172,7 +177,7 @@
             // 
             // FechaTimePicker
             // 
-            this.FechaTimePicker.Location = new System.Drawing.Point(0, 39);
+            this.FechaTimePicker.Location = new System.Drawing.Point(0, 62);
             this.FechaTimePicker.Name = "FechaTimePicker";
             this.FechaTimePicker.Size = new System.Drawing.Size(201, 20);
             this.FechaTimePicker.TabIndex = 12;
@@ -200,7 +205,7 @@
             // 
             // tbComentario
             // 
-            this.tbComentario.Location = new System.Drawing.Point(0, 137);
+            this.tbComentario.Location = new System.Drawing.Point(0, 158);
             this.tbComentario.Name = "tbComentario";
             this.tbComentario.Size = new System.Drawing.Size(201, 20);
             this.tbComentario.TabIndex = 6;
@@ -215,7 +220,7 @@
             this.panel2.Controls.Add(this.btGuardar);
             this.panel2.Controls.Add(this.btNuevo);
             this.panel2.Font = new System.Drawing.Font("Segoe UI Black", 9F);
-            this.panel2.Location = new System.Drawing.Point(12, 196);
+            this.panel2.Location = new System.Drawing.Point(12, 231);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(334, 59);
             this.panel2.TabIndex = 4;
@@ -259,11 +264,28 @@
             this.btNuevo.UseVisualStyleBackColor = true;
             this.btNuevo.Click += new System.EventHandler(this.BtNuevo_Click);
             // 
+            // IDInscripcionUpDown
+            // 
+            this.IDInscripcionUpDown.Location = new System.Drawing.Point(0, 38);
+            this.IDInscripcionUpDown.Name = "IDInscripcionUpDown";
+            this.IDInscripcionUpDown.Size = new System.Drawing.Size(201, 20);
+            this.IDInscripcionUpDown.TabIndex = 19;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Black", 9F);
+            this.label7.Location = new System.Drawing.Point(3, 38);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(94, 15);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "ID Inscripcion:";
+            // 
             // RegistroInscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 271);
+            this.ClientSize = new System.Drawing.Size(354, 330);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.panel1);
@@ -278,6 +300,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.IDInscripcionUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -304,5 +327,7 @@
         private System.Windows.Forms.Button btEliminar;
         private System.Windows.Forms.Button btGuardar;
         private System.Windows.Forms.Button btNuevo;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown IDInscripcionUpDown;
     }
 }

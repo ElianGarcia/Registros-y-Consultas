@@ -14,11 +14,14 @@ namespace Register.BLL
         {
             bool realizado = false;
             Contexto db = new Contexto();
+            Estudiante estudiante = new Estudiante();
+            estudiante.Id = inscripcion.EstudianteID;
 
             try
             {
                 if (db.Inscripcion.Add(inscripcion) != null)
                     realizado = db.SaveChanges() > 0;
+                db.Estudiante.Find(estudiante.Id).Balance = inscripcion.Balance;
             }
             catch (Exception)
             {
