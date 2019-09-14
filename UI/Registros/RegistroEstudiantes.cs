@@ -1,4 +1,5 @@
 ﻿using Register.BLL;
+using Register.DAL;
 using Register.Entidades;
 using System;
 using System.Windows.Forms;
@@ -41,7 +42,13 @@ namespace Register.UI.Registros
             estudiante.Celular = tbCelular.Text;
             estudiante.Email = tbEmail.Text;
             estudiante.FechaDeNacimiento = FechaNacimientoTimePicker.Value;
-            estudiante.Sexo = cbSexo.SelectedItem.ToString();
+
+            if (cbSexo.SelectedItem.ToString() == "F")
+                estudiante.Sexo = "Femenino";
+            else
+                if (cbSexo.SelectedItem.ToString() == "Masculino")
+                estudiante.Sexo = "Masculino";
+
             return estudiante;
         }
 
@@ -57,15 +64,15 @@ namespace Register.UI.Registros
             tbEmail.Text = estudiante.Email;
             FechaNacimientoTimePicker.Value  = estudiante.FechaDeNacimiento;
 
-            if (estudiante.Sexo == "M")
+            if (estudiante.Sexo == "Masculino")
             {
-                cbSexo.Text = "M";
+                cbSexo.Text = "Masculino";
                 cbSexo.Show();
             }
 
-            if (estudiante.Sexo == "F")
+            if (estudiante.Sexo == "Femenino")
             {
-                cbSexo.Text = "F";
+                cbSexo.Text = "Femenino";
                 cbSexo.Show();
             }
 
@@ -148,13 +155,6 @@ namespace Register.UI.Registros
                 realizado = false;
             }
 
-            if (string.IsNullOrWhiteSpace(tbBalance.Text))
-            {
-                errorProvider.SetError(tbBalance, "EL CAMPO BALANCE NO PUEDE ESTAR VACIO, POR FAVOR SELECCIONE UNA OPCION");
-                tbBalance.Focus();
-                realizado = false;
-            }
-
             return realizado;
         }
 
@@ -209,18 +209,29 @@ namespace Register.UI.Registros
 
             int id;
             int.TryParse(IDnumericUpDown.Text, out id);
+            Contexto db = new Contexto();
 
-            Limpiar();
+            Estudiante estudiante = new Estudiante();
+            estudiante.Balance = db.Estudiante.Find(id).Balance;
 
-            if (EstudiantesBLL.Eliminar(id))
+            if(estudiante.Balance > 0)
             {
-                MessageBox.Show("Eliminado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            } else
-            {
-                errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un estudiante inexistente");
+                MessageBox.Show("NO SE PUEDE ELIMINAR PORQUE TIENE UNA DEUDA PENDIENTE DE " + estudiante.Balance + "$", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                Limpiar();
 
+                if (EstudiantesBLL.Eliminar(id))
+                {
+                    MessageBox.Show("Eliminado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un estudiante inexistente");
+                }
+            }
         }
 
         private void BtBuscar_Click(object sender, EventArgs e)

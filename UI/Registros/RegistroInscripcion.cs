@@ -98,6 +98,12 @@ namespace Register.UI.Registros
             return (inscripcion != null);
         }
 
+        private bool EstudianteExiste()
+        {
+            Estudiante estudiante = EstudiantesBLL.Buscar(Convert.ToInt32(IDnumericUpDown.Value));
+            return (estudiante != null);
+        }
+
         private void BtBuscar_Click(object sender, EventArgs e)
         {
             int id;
@@ -128,7 +134,7 @@ namespace Register.UI.Registros
 
             inscripcion = LlenaCLase();
 
-            if (IDInscripcionUpDown.Value == 0)
+            if (IDInscripcionUpDown.Value == 0 && EstudianteExiste() == true)
                 realizado = InscripcionesBLL.Guardar(inscripcion);
             else
             {

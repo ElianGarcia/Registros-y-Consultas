@@ -43,7 +43,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel = new System.Windows.Forms.Panel();
-            this.tbBalance = new System.Windows.Forms.MaskedTextBox();
             this.tbMatricula = new System.Windows.Forms.MaskedTextBox();
             this.tbCedula = new System.Windows.Forms.MaskedTextBox();
             this.tbTelefono = new System.Windows.Forms.MaskedTextBox();
@@ -60,6 +59,7 @@
             this.btGuardar = new System.Windows.Forms.Button();
             this.btNuevo = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tbBalance = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
@@ -204,15 +204,6 @@
             this.panel.Size = new System.Drawing.Size(231, 287);
             this.panel.TabIndex = 1;
             // 
-            // tbBalance
-            // 
-            this.tbBalance.Location = new System.Drawing.Point(0, 257);
-            this.tbBalance.Mask = "99999.99";
-            this.tbBalance.Name = "tbBalance";
-            this.tbBalance.ReadOnly = true;
-            this.tbBalance.Size = new System.Drawing.Size(201, 20);
-            this.tbBalance.TabIndex = 19;
-            // 
             // tbMatricula
             // 
             this.tbMatricula.Location = new System.Drawing.Point(0, 41);
@@ -249,8 +240,8 @@
             // 
             this.cbSexo.FormattingEnabled = true;
             this.cbSexo.Items.AddRange(new object[] {
-            "M",
-            "F"});
+            "Masculino",
+            "Femenino"});
             this.cbSexo.Location = new System.Drawing.Point(0, 233);
             this.cbSexo.Name = "cbSexo";
             this.cbSexo.Size = new System.Drawing.Size(201, 21);
@@ -359,6 +350,14 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // tbBalance
+            // 
+            this.tbBalance.Location = new System.Drawing.Point(0, 257);
+            this.tbBalance.Name = "tbBalance";
+            this.tbBalance.ReadOnly = true;
+            this.tbBalance.Size = new System.Drawing.Size(201, 20);
+            this.tbBalance.TabIndex = 19;
+            // 
             // RegistroEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -412,7 +411,7 @@
         private System.Windows.Forms.MaskedTextBox tbCelular;
         private System.Windows.Forms.MaskedTextBox tbCedula;
         private System.Windows.Forms.MaskedTextBox tbMatricula;
-        private System.Windows.Forms.MaskedTextBox tbBalance;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.TextBox tbBalance;
     }
 }
