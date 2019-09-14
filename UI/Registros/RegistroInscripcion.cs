@@ -134,7 +134,7 @@ namespace Register.UI.Registros
 
             inscripcion = LlenaCLase();
 
-            if (IDInscripcionUpDown.Value == 0 && EstudianteExiste() == true)
+            if (Convert.ToInt32(IDInscripcionUpDown.Value) == 0 && EstudianteExiste() == true)
                 realizado = InscripcionesBLL.Guardar(inscripcion);
             else
             {

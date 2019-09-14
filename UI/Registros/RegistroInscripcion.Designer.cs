@@ -199,6 +199,10 @@
             // 
             // btBuscar
             // 
+            this.btBuscar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btBuscar.Font = new System.Drawing.Font("Segoe UI Black", 9F);
             this.btBuscar.Image = global::Register.Properties.Resources.find;
             this.btBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -242,6 +246,10 @@
             // 
             // btEliminar
             // 
+            this.btEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEliminar.Image = global::Register.Properties.Resources.error;
             this.btEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btEliminar.Location = new System.Drawing.Point(218, 3);
@@ -255,6 +263,10 @@
             // 
             // btGuardar
             // 
+            this.btGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btGuardar.Image = global::Register.Properties.Resources.save__2_;
             this.btGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btGuardar.Location = new System.Drawing.Point(113, 3);
@@ -268,6 +280,10 @@
             // 
             // btNuevo
             // 
+            this.btNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btNuevo.Image = global::Register.Properties.Resources.add;
             this.btNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btNuevo.Location = new System.Drawing.Point(6, 3);
@@ -283,7 +299,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 330);
+            this.ClientSize = new System.Drawing.Size(354, 301);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.panel1);
