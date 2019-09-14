@@ -18,9 +18,12 @@ namespace Register.BLL
             try
             {
                 if (db.Inscripcion.Add(inscripcion) != null)
+                {
                     realizado = db.SaveChanges() > 0;
-                db.Estudiante.Find(inscripcion.EstudianteID).Balance = inscripcion.Balance;
+                    db.Estudiante.Find(inscripcion.EstudianteID).Balance = inscripcion.Balance;
                     realizado = db.SaveChanges() > 0;
+                }
+                    
             }
             catch (Exception)
             {
@@ -39,14 +42,11 @@ namespace Register.BLL
         {
             bool realizado = false;
             Contexto db = new Contexto();
-            Estudiante estudiante = new Estudiante();
-            estudiante.Id = inscripcion.EstudianteID;
 
             try
             {
                 db.Entry(inscripcion).State = EntityState.Modified;
-                db.Estudiante.Find(estudiante.Id).Balance = inscripcion.Balance;
-                db.Entry(estudiante).State = EntityState.Modified;
+                db.Estudiante.Find(inscripcion.EstudianteID).Balance = inscripcion.Balance;
                 realizado = (db.SaveChanges() > 0);
             }
             catch (Exception)
