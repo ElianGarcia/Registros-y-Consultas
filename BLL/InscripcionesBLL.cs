@@ -19,8 +19,7 @@ namespace Register.BLL
             {
                 if (db.Inscripcion.Add(inscripcion) != null)
                 {
-                    realizado = db.SaveChanges() > 0;
-                    db.Estudiante.Find(inscripcion.EstudianteID).Balance = inscripcion.Balance;
+                    db.Estudiante.Find(inscripcion.EstudianteID).Balance += inscripcion.Monto;
                     realizado = db.SaveChanges() > 0;
                 }
                     
