@@ -6,7 +6,7 @@ namespace Register.DAL
 {
     public class Contexto : DbContext
     {
-        public DbSet<Estudiante> Estudiante { get; set; }
+        public DbSet<Estudiantes> Estudiante { get; set; }
         public DbSet<Inscripcion> Inscripcion { get; set; }
 
         public Contexto() : base("ConStr")

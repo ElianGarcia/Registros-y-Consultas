@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Register.Entidades
 {
-    public class Estudiante
+    public class Estudiantes
     {
         [Key]
-        public int Id { get; set; }
+        public int EstudianteId { get; set; }
         public string Matricula { get; set; }
-        public string Nombre { get; set; }
+        public string Nombres { get; set; }
         public string Apellidos { get; set; }
         public string Cedula { get; set; }
         public string Telefono { get; set; }
@@ -18,11 +18,11 @@ namespace Register.Entidades
         public string Sexo { get; set; }
         public float Balance { get; set; }
 
-        public Estudiante(int id, string matricula, string nombre, string apellidos, string cedula, string telefono, string celular, string email, DateTime fechaNacimiento, string sexo, float balance)
+        public Estudiantes(int id, string matricula, string nombre, string apellidos, string cedula, string telefono, string celular, string email, DateTime fechaNacimiento, string sexo, float balance)
         {
-            Id = id;
+            EstudianteId = id;
             Matricula = matricula;
-            Nombre = nombre;
+            Nombres = nombre;
             Apellidos = apellidos;
             Cedula = cedula;
             Telefono = telefono;
@@ -33,11 +33,11 @@ namespace Register.Entidades
             Balance = balance;
         }
 
-        public Estudiante()
+        public Estudiantes()
         {
-            Id = 0;
+            EstudianteId = 0;
             Matricula = string.Empty;
-            Nombre = string.Empty;
+            Nombres = string.Empty;
             Apellidos = string.Empty;
             Cedula = string.Empty;
             Telefono = string.Empty;

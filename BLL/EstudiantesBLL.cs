@@ -11,7 +11,7 @@ namespace Register.BLL
     public class EstudiantesBLL
     {
 
-        public static bool Guardar(Estudiante estudiante)
+        public static bool Guardar(Estudiantes estudiante)
         {
             bool realizado = false;
             Contexto db = new Contexto();
@@ -34,7 +34,7 @@ namespace Register.BLL
             return realizado;
         }
 
-        public static bool Modificar(Estudiante estudiante)
+        public static bool Modificar(Estudiantes estudiante)
         {
             bool realizado = false;
             Contexto db = new Contexto();
@@ -81,10 +81,10 @@ namespace Register.BLL
             return realizado;
         }
 
-        public static Estudiante Buscar(int id)
+        public static Estudiantes Buscar(int id)
         {
             Contexto db = new Contexto();
-            Estudiante estudiante = new Estudiante();
+            Estudiantes estudiante = new Estudiantes();
 
             try
             {
@@ -103,9 +103,9 @@ namespace Register.BLL
             return estudiante;
         }
 
-        public static List<Estudiante> GetList(Expression<Func<Estudiante, bool>> estudiante)
+        public static List<Estudiantes> GetList(Expression<Func<Estudiantes, bool>> estudiante)
         {
-            List<Estudiante> Lista = new List<Estudiante>();
+            List<Estudiantes> Lista = new List<Estudiantes>();
             Contexto db = new Contexto();
 
             try

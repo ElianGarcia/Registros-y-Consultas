@@ -30,12 +30,12 @@ namespace Register.UI.Registros
             errorProvider.Clear();
         }
 
-        private Estudiante LlenaCLase()
+        private Estudiantes LlenaCLase()
         {
-            Estudiante estudiante = new Estudiante();
-            estudiante.Id = Convert.ToInt32(IDnumericUpDown.Value);
+            Estudiantes estudiante = new Estudiantes();
+            estudiante.EstudianteId = Convert.ToInt32(IDnumericUpDown.Value);
             estudiante.Matricula = tbMatricula.Text;
-            estudiante.Nombre = tbNombre.Text;
+            estudiante.Nombres = tbNombre.Text;
             estudiante.Apellidos = tbApellidos.Text;
             estudiante.Cedula = tbCedula.Text;
             estudiante.Telefono = tbApellidos.Text;
@@ -52,11 +52,11 @@ namespace Register.UI.Registros
             return estudiante;
         }
 
-        private void LlenaCampos(Estudiante estudiante)
+        private void LlenaCampos(Estudiantes estudiante)
         {
-            IDnumericUpDown.Value = estudiante.Id;
+            IDnumericUpDown.Value = estudiante.EstudianteId;
             tbMatricula.Text = estudiante.Matricula;
-            tbNombre.Text = estudiante.Nombre;
+            tbNombre.Text = estudiante.Nombres;
             tbApellidos.Text = estudiante.Apellidos;
             tbCedula.Text = estudiante.Cedula;
             tbApellidos.Text = estudiante.Telefono;
@@ -160,7 +160,7 @@ namespace Register.UI.Registros
 
         private bool Existe()
         {
-            Estudiante estudiante = EstudiantesBLL.Buscar((int)IDnumericUpDown.Value);
+            Estudiantes estudiante = EstudiantesBLL.Buscar((int)IDnumericUpDown.Value);
 
             return (estudiante != null);
         }
@@ -172,7 +172,7 @@ namespace Register.UI.Registros
 
         private void BtGuardar_Click(object sender, EventArgs e)
         {
-            Estudiante estudiante = new Estudiante();
+            Estudiantes estudiante = new Estudiantes();
             bool realizado = false;
 
             if (!Validar())
@@ -211,7 +211,7 @@ namespace Register.UI.Registros
             int.TryParse(IDnumericUpDown.Text, out id);
             Contexto db = new Contexto();
 
-            Estudiante estudiante = new Estudiante();
+            Estudiantes estudiante = new Estudiantes();
             estudiante.Balance = db.Estudiante.Find(id).Balance;
 
             if(estudiante.Balance > 0)
@@ -237,7 +237,7 @@ namespace Register.UI.Registros
         private void BtBuscar_Click(object sender, EventArgs e)
         {
             int id;
-            Estudiante estudiante = new Estudiante();
+            Estudiantes estudiante = new Estudiantes();
             int.TryParse(IDnumericUpDown.Text, out id);
 
             Limpiar();

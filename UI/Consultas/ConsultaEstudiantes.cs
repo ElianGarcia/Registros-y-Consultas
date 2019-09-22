@@ -17,7 +17,7 @@ namespace Register.UI.Consultas
 
         private void ConsultaButton_Click(object sender, EventArgs e)
         {
-            var listado = new List<Estudiante>();
+            var listado = new List<Estudiantes>();
 
             if (tbCriterio.Text.Trim().Length > 0)
             {
@@ -29,11 +29,11 @@ namespace Register.UI.Consultas
 
                     case 1:
                         int id = Convert.ToInt32(tbCriterio.Text);
-                        listado = EstudiantesBLL.GetList(estudiante => estudiante.Id == id);
+                        listado = EstudiantesBLL.GetList(estudiante => estudiante.EstudianteId == id);
                         break;
 
                     case 2:
-                        listado = EstudiantesBLL.GetList(estudiante => estudiante.Nombre.Contains(tbCriterio.Text));
+                        listado = EstudiantesBLL.GetList(estudiante => estudiante.Nombres.Contains(tbCriterio.Text));
                         break;
 
                     case 3:

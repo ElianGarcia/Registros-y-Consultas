@@ -180,6 +180,7 @@
             this.MaximizeBox = false;
             this.Name = "ConsultaEstudiantes";
             this.Text = "Consulta De Estudiantes";
+            this.Load += new System.EventHandler(this.ConsultaEstudiantes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

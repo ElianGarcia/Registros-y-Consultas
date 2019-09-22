@@ -100,7 +100,7 @@ namespace Register.UI.Registros
 
         private bool EstudianteExiste()
         {
-            Estudiante estudiante = EstudiantesBLL.Buscar(Convert.ToInt32(IDnumericUpDown.Value));
+            Estudiantes estudiante = EstudiantesBLL.Buscar(Convert.ToInt32(IDnumericUpDown.Value));
             return (estudiante != null);
         }
 
